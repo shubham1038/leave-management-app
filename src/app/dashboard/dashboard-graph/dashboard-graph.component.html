@@ -1,0 +1,38 @@
+<div class="row mt-4">
+  <ngx-charts-bar-vertical-2d
+    [view]="view"
+    [scheme]="colorScheme"
+    [results]="multi"
+    [gradient]="gradient"
+    [xAxis]="showXAxis"
+    [yAxis]="showYAxis"
+    [legend]="showLegend"
+    [showXAxisLabel]="showXAxisLabel"
+    [showYAxisLabel]="showYAxisLabel"
+    [xAxisLabel]="xAxisLabel"
+    [yAxisLabel]="yAxisLabel"
+    [legendTitle]="legendTitle"
+    (select)="onSelect($event)"
+    (activate)="onActivate($event)"
+    (deactivate)="onDeactivate($event)">
+  </ngx-charts-bar-vertical-2d>
+</div>
+<br/>   
+<div class="row mt-4">
+  <ngx-charts-line-chart
+    [view]="view"
+    [scheme]="colorScheme"
+    [legend]="showLegend"
+    [showXAxisLabel]="showXAxisLabel"
+    [showYAxisLabel]="showYAxisLabel"
+    [xAxis]="showXAxis"
+    [yAxis]="showYAxis"
+    [legendTitle]="legendTitle1"
+    [xAxisLabel]="xAxisLabelBar"
+    [yAxisLabel]="yAxisLabel"
+    [results]="multi"
+    (select)="onSelect($event)"
+    (activate)="onActivate($event)"
+    (deactivate)="onDeactivate($event)">
+  </ngx-charts-line-chart>
+</div>

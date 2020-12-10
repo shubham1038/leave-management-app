@@ -1,0 +1,23 @@
+.modal-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    pointer-events: auto;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 3px solid #428fe2 !important;
+    border-radius: 0.5rem;
+    outline: 0;
+}
+
+.fa-pencil-alt {
+    content: "f303";
+}
+.fa, .fas {
+    font-weight: 900;
+}
+.fa-fw {
+    text-align: center;
+    width: 1.25em;
+}

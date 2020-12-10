@@ -1,0 +1,14 @@
+<div class="content-box">
+  <div mat-tab-nav-bar class="custom-tab">
+    <a mat-tab-link class="nav-link" routerLink="/leave/list" routerLinkActive="active">
+      <mat-icon>event_note</mat-icon>&nbsp;All Leave Requests
+    </a>
+    <a mat-tab-link class="nav-link" routerLink="/leave/new" routerLinkActive="active">
+      <mat-icon>add_circle</mat-icon>&nbsp;Leave Request
+    </a>
+  </div>
+  <router-outlet></router-outlet>
+</div>
+<ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="default" type="ball-spin-clockwise">
+  <p style="color: white">Please Wait. </p>
+</ngx-spinner>

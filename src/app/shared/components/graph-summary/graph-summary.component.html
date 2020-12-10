@@ -1,0 +1,34 @@
+<div class="modal-header" *ngIf="title!=''">
+    <h4 class="modal-title" id="modal-basic-title">{{title}}</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <table class="table table-hover table-sm" datatable>
+        <thead class="thead-light">
+          <tr>
+            <th (click)="sort('employeeName')">Employee Name <mat-icon>swap_vert</mat-icon>
+            </th>
+            <th (click)="sort('startDate')">Start Date <mat-icon>swap_vert</mat-icon>
+            </th>
+            <th (click)="sort('endDate')">End Date <mat-icon>swap_vert</mat-icon>
+            </th>
+            <th (click)="sort('reason')">Reason <mat-icon>swap_vert</mat-icon>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of msg">
+            <td>{{item.employeeName}}</td>
+            <td>{{item.startDate}}</td>
+            <td>{{item.endDate}}</td>
+            <td>{{item.reason}}</td>
+          </tr>
+        </tbody><br>
+      </table>
+</div>
+<div class="modal-footer">
+    <button type="button" [ngClass]="{'disabled' : selectedItem == null}" class="btn btn-primary"
+        (click)="confirmClick()">{{confirmLabel}}</button>
+</div>

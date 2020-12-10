@@ -1,0 +1,29 @@
+<div class="panel-body">
+  <table class="table table-hover table-sm" datatable>
+    <thead class="thead-light">
+      <tr>
+        <th (click)="sort('id')">Employee Id <mat-icon>swap_vert</mat-icon>
+        </th>
+        <th (click)="sort('firstName')">Employee Name <mat-icon>swap_vert</mat-icon>
+        </th>
+        <th (click)="sort('phoneNo')">Phone Number <mat-icon>swap_vert</mat-icon>
+        </th>
+        <th (click)="sort('emailId')">Email Id <mat-icon>swap_vert</mat-icon>
+        </th>
+        <th>Action</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let emp of empList">
+        <td>{{emp.id}}</td>
+        <td>{{emp.firstName}} {{emp.lastName}}</td>
+        <td>{{emp.phoneNo}}</td>
+        <td>{{emp.emailId}}</td>
+        <td><button (click)="updateUser(emp.id)" class='btn btn-info m-1' data-toggle="modal"
+            data-target="#myModal">Update</button>
+        </td>
+      </tr>
+    </tbody><br>
+  </table>
+</div>

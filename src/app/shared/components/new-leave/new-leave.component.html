@@ -1,0 +1,65 @@
+<div class="modal-header" *ngIf="title!=''">
+    <h4 class="modal-title" id="modal-basic-title">{{title}}</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <table>
+        <tr>
+            <td>Leave Type:</td>
+            <td><mat-form-field appearance="fill">
+                <mat-label>Leave Type</mat-label>
+                <mat-select [(ngModel)]="leave.leaveType" name="leaveType">
+                    <mat-option *ngFor="let leaveType of leavesList" [value]="leaveType.value">
+                        {{leaveType.viewValue}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            </td>
+        </tr>
+        <tr>
+            <td>Employee Name:</td>
+            <td>
+            <mat-form-field appearance="fill">
+                <mat-label>Emaployee</mat-label>
+                <mat-select [(ngModel)]="leave.employee" name="employee">
+                    <mat-option *ngFor="let emp of employeeList" [value]="emp">
+                        {{emp.firstName}} {{emp.lastName}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            </td>
+        </tr>
+        <tr>
+            <td>Leave Start Date:</td>
+            <td>
+                <div>
+                    <input type="text" [(ngModel)]="leave.startDate" name="startDate" placeholder="Start Date"
+                        class="form-control" bsDatepicker [bsConfig]="{dateInputFormat: 'YYYY-MM-DD'}"
+                        onkeydown="return false" autocomplete="off" required>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>Leave End Date:</td>
+            <td>
+                <div>
+                    <input type="text" [(ngModel)]="leave.endDate" name="endDate" placeholder="End Date" class="form-control"
+                        bsDatepicker [bsConfig]="{dateInputFormat: 'YYYY-MM-DD'}" [minDate]="leave.startDate | stringTodate" onkeydown="return false"
+                        autocomplete="off" required>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>Description:</td>
+            <td><div class="col-sm-24">
+                <input type="text" name="reason" [(ngModel)]="leave.reason" class="form-control" placeholder="Reason" />
+            </div></td>
+        </tr>
+    </table>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-primary"
+            (click)="confirmOkClick($event, 'OK')">OK</button>
+    </div>
+</div>
